@@ -208,8 +208,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     def __worker1_end(self, msg:str = '') -> None:
         if msg:
             self._warning_message(msg)
-        self.start_time_setting.upgrade()
-        self.start_time_setting.load()
+        else:
+            self.start_time_setting.upgrade()
+            self.start_time_setting.load()
         self.pushButton_delete.setEnabled(True)
         self.progressBar.hide()
         self.progressBar.setValue(-1)
